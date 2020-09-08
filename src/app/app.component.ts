@@ -23,13 +23,14 @@ export class AppComponent {
       this.tablezones = data;
     });
     this.searchTextInput.valueChanges.subscribe((data: string) => {
+      console.log(data);
       if (data.toString().trim() === '') {
         this.tablezones = this.zones;
       } else {
-        if (this.zones.filter(element => element.zonename.toString().trim() === data.toString().trim()).length === 0) {
+        if (this.zones.filter(element => element.zonename.toLowerCase().includes(data.toLowerCase())).length === 0) {
           this.tablezones = this.zones;
         } else {
-          this.tablezones = this.zones.filter(element => element.zonename.toString().trim() === data.toString().trim());
+          this.tablezones = this.zones.filter(element => element.zonename.toLowerCase().includes(data.toLowerCase()));
         }
       }
     });
