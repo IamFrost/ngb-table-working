@@ -1,12 +1,12 @@
-<p>You can do filter table data, in this case with observables and our <code>NgbHighlight</code> component used in
-  Typeahead</p>
-
+<p>
+  You can do filter table data, in this case with observables and our <code>NgbHighlight</code> component used in
+  Typeahead
+</p>
 <form>
   <div class="form-group form-inline">
-    Full text search: <input class="form-control ml-2" type="text" [formControl]="searchTextInput" />
+    Full text search: <input class="form-control ml-2" type="text" [formControl]="searchTextInput" id="searchTextInput" />
   </div>
 </form>
-
 <table class="table table-striped">
   <thead>
     <tr>
@@ -16,6 +16,7 @@
     </tr>
   </thead>
   <tbody>
+    <!-- <tr *ngFor="let zone of tablezones | zoneSearch1:searchTextInput.value  ; index as i"> -->
     <tr *ngFor="let zone of tablezones; index as i">
       <th scope="row">{{ i + 1 }}</th>
       <td>
@@ -27,7 +28,3 @@
     </tr>
   </tbody>
 </table>
-
-
-
-<router-outlet></router-outlet>

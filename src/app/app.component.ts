@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ZoneModel } from './zone-model';
 import { ZoneService } from './zone.service';
 import { FormControl } from '@angular/forms';
+import { ZoneSearch1Pipe } from './zone-search-1.pipe';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,8 @@ export class AppComponent {
       this.tablezones = data;
     });
     this.searchTextInput.valueChanges.subscribe((data: string) => {
+      // let x = new ZoneSearch1Pipe();
+      // console.log(x.transform(this.zones,data));
       console.log(data);
       if (data.toString().trim() === '') {
         this.tablezones = this.zones;
